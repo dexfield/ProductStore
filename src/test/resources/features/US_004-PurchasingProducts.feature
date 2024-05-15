@@ -1,8 +1,9 @@
 Feature: US_004 Test to buy the product in the cart as a registered user.
 
-  Scenario: A registered user logs in to the site, puts a product in the cart and buys it.
-
+  Background: Login Access
     * The user logs in to the site.
+
+  Scenario: A registered user logs in to the site, puts a product in the cart and buys it.
 
     * Click on the Monitors link from the Categories menu on the home page.
     * Save the name and price of the Apple brand product on the page that opens.
@@ -12,7 +13,6 @@ Feature: US_004 Test to buy the product in the cart as a registered user.
     * Click on the Add to cart button.
     * Product added is displayed and it is confirmed that the product is added to the cart.
     * Click OK button on the alert screen that appears.
-
     * Click on the Cart text in the footer section.
     * Verify that the URL of the page opened is Product Store - Cart.
     * Verify that the product name is Apple monitor 24.

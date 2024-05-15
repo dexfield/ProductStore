@@ -29,18 +29,22 @@ public class Us_004_PurchasingProduct {
 
     @Given("Save the name and price of the Apple brand product on the page that opens.")
     public void save_the_name_and_price_of_the_apple_brand_product_on_the_page_that_opens() {
+        ReusableMethods.wait(2);
         page.appleMonitor.click();
+
 
     }
 
     @Given("On the page that opens, verify that the product name is Apple monitor 24.")
     public void on_the_page_that_opens_verify_that_the_product_name_is_apple_monitor_24() {
-        Assert.assertEquals(ConfigReader.getProperty("appleMonitor"),page.productNameInTheCart.getText());
         ReusableMethods.wait(1);
+        Assert.assertEquals(ConfigReader.getProperty("appleMonitor"),page.productNameInTheCart.getText());
+
     }
 
     @Given("On the page that opens, verify that the product price is $400.")
     public void on_the_page_that_opens_verify_that_the_product_price_is_$400() {
+        ReusableMethods.wait(1);
         String x=page.productPriceInTheCart.getText();
         String actualProductPrice=x.replaceAll("\\D","");
         Assert.assertEquals(ConfigReader.getProperty("appleMonitorPrice"),actualProductPrice);
@@ -49,6 +53,7 @@ public class Us_004_PurchasingProduct {
 
     @Given("It is verified that the Add to cart button is displayed.")
     public void it_is_verified_that_the_add_to_cart_button_is_displayed() {
+        ReusableMethods.wait(1);
         Assert.assertTrue(page.addToCartButton.isDisplayed());
 
     }

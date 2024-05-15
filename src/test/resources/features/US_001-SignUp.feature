@@ -8,7 +8,7 @@ Feature: US_001 Sign-up test to the Product Store page
     * Click on the Sign up link.
     * The Username box should appear on the page that opens.
     * Password box should be displayed on the page that opens.
-    * A username "valven123" must be entered in the Username box.
+    * A username "valvenx12345" must be entered in the Username box.
     * A password "randompassword" must be entered in the password box.
     * The Sign up button should appear
     * The sign up button should be clicked.

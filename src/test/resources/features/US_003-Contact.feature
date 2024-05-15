@@ -1,8 +1,10 @@
 Feature: US_003 Test sending a message via the Contact page.
 
+  Background: Login Access
+    * The user logs in to the site.
+
   Scenario: Send a message to a registered user using the Contact menu.
 
-    * The user logs in to the site.
     * It should be verified that the Contact link on the footer is visible and clicked.
     * It should be verified that the New message title is visible on the page that opens.
     * Contact Email and textbox should be visible.

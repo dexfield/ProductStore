@@ -1,5 +1,6 @@
 package pages;
 
+import org.junit.After;
 import org.junit.Assert;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.WebElement;
@@ -46,6 +47,7 @@ public class ProductStorePage {
 
     public String expectedSignUpAlertText="Sign up successful.";
 
+
     public void acceptSignUpAlert(){
         ReusableMethods.wait(3);
         Alert alert = Driver.getDriver().switchTo().alert();
@@ -55,6 +57,7 @@ public class ProductStorePage {
 
     public void loginToWebsite() {
         Driver.getDriver().get(ConfigReader.getProperty("ProductStoreUrl"));
+        Driver.getDriver().manage().window().maximize();
         logInBox.click();
         ReusableMethods.wait(1);
         logInUsername.sendKeys(ConfigReader.getProperty("ProductStoreUsername"));
