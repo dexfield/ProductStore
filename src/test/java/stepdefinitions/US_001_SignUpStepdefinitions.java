@@ -1,5 +1,6 @@
 package stepdefinitions;
 
+import com.github.javafaker.Faker;
 import io.cucumber.java.bs.A;
 import io.cucumber.java.en.Given;
 import org.junit.Assert;
@@ -52,14 +53,17 @@ public class US_001_SignUpStepdefinitions {
         Assert.assertTrue(page.passwordBox.isDisplayed());
     }
 
-    @Given("A username {string} must be entered in the Username box.")
-    public void a_username_must_be_entered_in_the_username_box(String randomUsername) {
-        page.usernameBox.sendKeys(randomUsername);
+    @Given("A username must be entered in the Username box.")
+    public void a_username_must_be_entered_in_the_username_box() {
+        Faker faker=new Faker();
+        page.usernameBox.sendKeys(faker.name().username());
+
     }
 
-    @Given("A password {string} must be entered in the password box.")
-    public void a_password_must_be_entered_in_the_password_box(String randomPassword) {
-        page.passwordBox.sendKeys(randomPassword);
+    @Given("A password must be entered in the password box.")
+    public void a_password_must_be_entered_in_the_password_box() {
+        Faker faker=new Faker();
+        page.passwordBox.sendKeys(faker.internet().password());
     }
 
     @Given("The Sign up button should appear")
