@@ -81,16 +81,12 @@ public class Us_004_PurchasingProduct {
 
         page.cartMenu.click();
     }
-    @Given("Verify that the URL of the page opened is Product Store - Cart.")
-    public void verify_that_the_url_of_the_page_opened_is_product_store_cart() {
 
-    }
     @Given("Verify that the product name is Apple monitor 24.")
     public void verify_that_the_product_name_is_apple_monitor_24() {
         Assert.assertEquals(ConfigReader.getProperty("appleMonitor"),page.productNameInCart.getText());
 
     }
-
 
     @Given("It is confirmed that the price of the product named Apple monitor 24 on the main page is 400$.")
     public void it_is_confirmed_that_the_price_of_the_product_named_apple_monitor_24_on_the_main_page_is_400$() {
@@ -121,26 +117,12 @@ public class Us_004_PurchasingProduct {
             page.countryTextBox.sendKeys(country);
     }
 
-    @Given("On the page that opens, enter the city in the {string} text box.")
-    public void on_the_page_that_opens_enter_the_city_in_the_text_box(String city) {
-
-        page.cityTextBox.sendKeys(city);
-    }
-
-    @Given("On the page that opens, enter a 16 digit credit card number in the {string} text box.")
-    public void on_the_page_that_opens_enter_a_digit_credit_card_number_in_the_text_box(String number) {
-
-        page.cardTextBox.sendKeys(number);
-
-    }
-
     @Given("On the opened page, enter a 2 digit month in the {string} text box.")
     public void on_the_opened_page_enter_a_digit_month_in_the_text_box(String month) {
 
         page.monthTextBox.sendKeys(month);
 
     }
-
 
     @Given("On the page that opens, enter a 2 digit year in the {string} text box.")
     public void on_the_page_that_opens_enter_a_digit_year_in_the_text_box(String year) {
@@ -156,18 +138,30 @@ public class Us_004_PurchasingProduct {
 
     }
 
-
-
     @Given("Thank you for your purchase! is displayed.")
     public void thank_you_for_your_purchase_is_displayed() {
 
         Assert.assertTrue(page.thankYouPurchaseText.isDisplayed());
 
     }
+
     @Given("Click on the OK button and confirm that the order has been placed successfully.")
     public void click_on_the_ok_button_and_confirm_that_the_order_has_been_placed_successfully() {
             ReusableMethods.wait(2);
         page.okPurchase.click();
+
+    }
+
+    @Given("On the page that opens, enter the city in the {string} text box.")
+    public void on_the_page_that_opens_enter_the_city_in_the_text_box(String city) {
+
+        page.cityTextBox.sendKeys(city);
+    }
+
+    @Given("On the page that opens, enter a 16 digit credit card number in the {string} text box.")
+    public void on_the_page_that_opens_enter_a_digit_credit_card_number_in_the_text_box(String number) {
+
+        page.cardTextBox.sendKeys(number);
 
     }
 }
